@@ -501,5 +501,365 @@ export const QUESTIONS_BANK: Question[] = [
     correctAnswer: 'B',
     explanation: 'A gordura visceral/abdominal elevada associa-se intimamente com risco de infarto e síndrome metabólica. A OMS define risco aumentado valores de CC ≥ 94 cm para homens e CC ≥ 80 cm para mulheres (Slide 6).',
     source: 'Medidas Antropométricas - Slide 6'
+  },
+  // --- NOVAS QUESTÕES DOS SLIDES E MATERIAIS ADICIONADOS ---
+  {
+    id: 'sng_sne_7',
+    topic: 'SNG e SNE',
+    difficulty: 'Médio',
+    questionText: 'Durante a passagem da Sonda Nasoenteral (SNE), caso o paciente comece a apresentar tosse persistente, cianose de extremidades ou dispneia súbita, o procedimento deve ser interrompido imediatamente. Essa intercorrência comumente indica:',
+    type: 'multiple-choice',
+    options: [
+      'Inserção correta e bem-sucedida da sonda no esôfago posterior.',
+      'Falta de lubrificante estéril suficiente ou gel de xilocaína.',
+      'Introdução acidental da sonda nas vias aéreas respiratórias (traqueia ou brônquios).',
+      'Reflexo vagal com aumento imediato da motilidade esofágica.'
+    ],
+    correctAnswer: 'C',
+    explanation: 'O aparecimento de tosse súbita, dispneia e cianose é um sinal crítico gravíssimo de que a sonda entrou acidentalmente na árvore respiratória superior (laringe, traqueia e pulmões). O técnico deve interromper e orientar a imediata tração de recuo para evitar pneumonia espasmodica ou asfixia imediata.',
+    source: 'SNG e SNE - Slide 25'
+  },
+  {
+    id: 'sng_sne_8',
+    topic: 'SNG e SNE',
+    difficulty: 'Difícil',
+    questionText: 'Com relação ao teste de ausculta epigástrica para verificar o posicionamento provisório de uma Sonda Nasogástrica (SNG), assinale a resposta correta sobre a técnica e suas limitações regulamentadas:',
+    type: 'multiple-choice',
+    options: [
+      'É o único método 100% infalível de verificação, desobrigando qualquer inspeção externa de raios-x.',
+      'Consiste na infusão rápida de 10 a 20 mL de ar pelo lúmen da sonda e ausculta simultânea com estetoscópio na região epigástrica. Embora útil de forma preliminar na beira do leito para SNG, não é totalmente fidedigna pois ruídos das vias respiratórias ou esôfago podem ser retransmitidos e simular posição gástrica.',
+      'Consiste em manter a ponta do estetoscópio posicionada no esterno superior, injetando 50 mL de água destilada.',
+      'Está completamente proibido e banido pelo COFEN para toda e qualquer situação pediátrica ou clínica adulta.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'O teste de ausculta (injetar 10-20 mL de ar e escutar o som de borbulho no hipocôndrio esquerdo/epigástrio) é prático e muito comum na SNG de beira de leito, mas pesquisas e manuais mostram que ruídos pulmonares ou esofágicos podem ser falsamente tomados por gástricos. Assim, a indicação oficial para alimentação prolongada (SNE) exige sempre confirmação por radiografia (raio-x) antes do primeiro uso.',
+    source: 'SNG e SNE - Slide 16 / Exercício 3'
+  },
+  {
+    id: 'sng_sne_9',
+    topic: 'SNG e SNE',
+    difficulty: 'Fácil',
+    questionText: 'Para prevenir efetivamente a obstrução física de uma Sonda Nasogástrica ou Nasoenteral por restos de alimentos ou precipitação de medicamentos, qual o volume de água recomendado para realizar o flushing (lavagem) rotineiro do cateter?',
+    type: 'multiple-choice',
+    options: [
+      'De 1 mL a 2 mL de álcool isopropílico para dissolver gorduras.',
+      'Cerca de 20 a 30 mL de água potável ou destilada sterile.',
+      'Pelo menos 150 a 200 mL de água fervida a cada administração.',
+      'Não se recomenda injetar nenhum líquido além da própria nutrição enteral.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A lavagem periódica com seringa contendo 20 a 30 mL de água limpa deve ser efetuada imediatamente após a administração de qualquer medicamento por via de sonda enteral, após término de dietas ou a cada 3 a 4 horas em infusão de bombas de esvaziamento contínuo.',
+    source: 'SNG e SNE - Slide 26'
+  },
+  {
+    id: 'sng_sne_10',
+    topic: 'SNG e SNE',
+    difficulty: 'Médio',
+    questionText: 'Dietas enterais expostas ao ambiente clínico (nutrição enteral por sistema aberto) são sensíveis e altamente propensas à proliferação bacteriana. Qual o tempo máximo estipulado de permanência e infusão da mesma embalagem de dieta sob temperatura ambiente para prevenir diarreia infecciosa no paciente?',
+    type: 'multiple-choice',
+    options: [
+      'No máximo 4 horas sob sistema aberto.',
+      'Até 24 horas consecutivas se o clima local estiver ameno.',
+      'Até 12 horas, desde que o lúmen da sonda receba irrigação salina.',
+      'O tempo de permanência é livre, pois dietas prontas não contêm carboidratos.'
+    ],
+    correctAnswer: 'A',
+    explanation: 'De acordo com as boas práticas sanitárias descritas no material (Slide 26) e protocolos internacionais sobre enteral de sistema aberto, a dieta que sofre manipulação rápida ou fracionamento não deve ficar pendurada à beira do leito sob infusão por mais de 4 horas devido ao risco exponencial de contaminação por patógenos humanos alimentares.',
+    source: 'SNG e SNE - Slide 26'
+  },
+  {
+    id: 'calc_med_8',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Fácil',
+    questionText: 'Prescrição médica de 1000 mL de Soro Fisiológico (SF) 0,9% para correr em 12 horas. Quantas gotas por minuto (macrogotas/min) o Técnico em Enfermagem deve programar no gotejamento por gravidade para regular o fluxo?',
+    type: 'calculation',
+    correctAnswer: '28',
+    explanation: 'Fórmula de macrogotas em horas: Gotas/min = Volume / (Tempo * 3). Substituindo:\nGotas/min = 1000 / (12 * 3)\nGotas/min = 1000 / 36\nGotas/min = 27,77 ≈ 28 gotas por minuto (arredondamento clínico usual).',
+    source: 'Cálculos de Gotejamento - Slide 44',
+    calculationSteps: [
+      '1. Seleção da fórmula conveniente: Gotas/min = Volume / (Tempo em Horas * 3)',
+      '2. Identificar dados da prescrição: Volume = 1000 mL, Tempo = 12 horas',
+      '3. Substituir valores: Gotas/min = 1000 / (12 * 3) = 1000 / 36',
+      '4. Executar divisão: 1000 / 36 = 27,77',
+      '5. Aplicar arrendodamento usual na beira do leito para número inteiro: 28 gotas/min.'
+    ]
+  },
+  {
+    id: 'calc_med_9',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Médio',
+    questionText: 'Foi prescrita Glicose pura na quantidade de 12 g por via intravenosa. Na enfermaria, estão disponíveis apenas ampolas de solução de Glicose 25% com volume contendo 20 mL. Quantos mL dessa solução são necessários aspirar para administrar a dose exata?',
+    type: 'calculation',
+    correctAnswer: '48',
+    explanation: 'Glicose 25% significa que existem 25 gramas de soluto em 100 mL de solução.\nMontamos a proporção:\n25 g -------- 100 mL\n12 g -------- x mL\n25 * x = 12 * 100\n25x = 1200\nx = 1200 / 25 = 48 mL.',
+    source: 'Cálculos de Dosagem - Slide 16 / Slide 39',
+    calculationSteps: [
+      '1. Compreender a escala de porcentagem: Glicose 25% indica fixos 25 g de glicose pura dentro de cada 100 mL.',
+      '2. Montar proporção linear da regra de três simples: 25 g -> 100 mL | 12 g -> x mL',
+      '3. Multiplicar cruzado: 25 * x = 1200',
+      '4. Dividir: x = 1200 / 25 = 48 mL.'
+    ]
+  },
+  {
+    id: 'calc_med_10',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Médio',
+    questionText: 'Prescrição: Penicilina Cristalina de 2.500.000 UI por via intravenosa de 8/8h. No hospital, está disponível o frasco-ampola de 5.000.000 UI. Sabendo que o pó seco no frasco ocupa 2 mL e adicionamos 8 mL de água destilada, totalizando 10 mL de volume reconstituído, quantos mL o técnico de enfermagem deve aspirar para administrar a dose exata?',
+    type: 'calculation',
+    correctAnswer: '5',
+    explanation: 'Com a adição de 8 mL de solvente líquido ao volume próprio de 2 mL do pó interno de cristais solúveis, o reservatório total do frasco resulta em exatamente 10 mL.\nProporção linear simples:\n5.000.000 UI -------- 10 mL\n2.500.000 UI -------- x mL\n5.000.000x = 2.500.000 * 10\n5.000.000x = 25.000.000\nx = 25.000.000 / 5.000.000\nx = 5 mL.',
+    source: 'Penicilina Cristalina - Slide 31',
+    calculationSteps: [
+      '1. Analisar volume total da embalagem: Volume dos cristais (2 mL) + Diluente adicionado (8 mL) = 10 mL.',
+      '2. Formular regra de três: 5.000.000 UI está para 10 mL, assim como 2.500.000 UI está para x mL.',
+      '3. Realizar cruzamento de produtos: 5.000.000 * x = 25.000.000',
+      '4. Simplificação final: x = 5 mL.'
+    ]
+  },
+  {
+    id: 'calc_med_11',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Fácil',
+    questionText: 'O médico prescreveu uma infusão venosa de 3 mL de determinada droga vasodilatadora para correr em 1 hora usando equipo de microgotas. Quantas microgotas por minuto devem ser programadas?',
+    type: 'calculation',
+    correctAnswer: '3',
+    explanation: 'Fórmula de gotejamento de microgotas por hora: Microgotas/min = Volume / Tempo (em horas).\nSubstituindo os valores:\nMicrogotas/min = 3 mL / 1 hora = 3 microgotas/min.\nLembrando que o fluxo em mL/hora é numericamente igual a microgotas por minuto.',
+    source: 'Cálculos de Gotejamento - Slide 45',
+    calculationSteps: [
+      '1. Aplicar a fórmula direta de microgotas/hora: Microgotas/min = Volume em mL / Horas de duração',
+      '2. Obter as variáveis correspondentes: Volume = 3 mL, Tempo = 1 hora',
+      '3. Divisão: 3 / 1 = 3 microgotas/min.'
+    ]
+  },
+  {
+    id: 'vias_adm_6',
+    topic: 'Vias de Administração',
+    difficulty: 'Fácil',
+    questionText: 'De acordo com a segurança clínica de medicamentos, a ação sistemática de cruzar o nome na cabeceira, a pulseira legível com código de barras institucional e a prescrição médica corresponde aos seguintes certos fundamentais de enfermagem:',
+    type: 'multiple-choice',
+    options: [
+      'Prescrição certa e Paciente certo.',
+      'Seringa certa e Diluente certo.',
+      'Via certa e Farmácia de manipulação certa.',
+      'Médico certo e Diagnóstico clínico correto.'
+    ],
+    correctAnswer: 'A',
+    explanation: 'A identificação correta do paciente (através de dois identificadores como nome completo e data de nascimento na pulseira ou fita) cruzando com a prescrição sem emendas ou ilegibilidades (prescrição certa) formam os degraus iniciais indispensáveis de barreira contra incidentes graves de medicação.',
+    source: 'Vias de Administração - Slides 30-31'
+  },
+  {
+    id: 'vias_adm_7',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'Qual a angulação do bisel e o ângulo correto recomendado para introduzir a agulha na administração de fármacos por Via Intradérmica (ID), usualmente realizada em testes alérgicos (Dermatestes) e na vacina BCG?',
+    type: 'multiple-choice',
+    options: [
+      '90 graus com bisel inteiramente voltado para baixo.',
+      '45 graus com bisel lateralizado paralelamente.',
+      '10 a 15 graus com bisel inclinado para cima.',
+      '30 graus mantendo bisel voltado para baixo.'
+    ],
+    correctAnswer: 'C',
+    explanation: 'A derme é a fina camada dérmica logo abaixo da epiderme. A técnica padrão (Slide 48) requer posicionar a agulha rente em um ângulo muito agudo (10° a 15°) com o bisel de face voltada para cima, permitindo a correta injeção superficial e consequente formação de pápula.',
+    source: 'Vias de Administração - Slide 48'
+  },
+  {
+    id: 'vias_adm_8',
+    topic: 'Vias de Administração',
+    difficulty: 'Fácil',
+    questionText: 'No tocante à Via Intramuscular (IM) profunda em pacientes adultos, a região ventroglútea (também conhecida na beira do leito como sítio de Hochstetter) é amplamente considerada segura por estar livre de grandes troncos arteriais periféricos e livre do nervo ciático.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Verdadeiro',
+    explanation: 'Conforme descrito nos guias de semiologia e via intramuscular do Slide 52, a região ventroglútea (localizada sobre o quadril, traçando-se triângulo a partir do trocanter maior e espinha ilíaca ântero-superior) é o sítio mais seguro para injetáveis de grande densidade ou volume nos adultos devido à sua excelente camada muscular espessa e menor índice de acidentes vasculares/gás-neurológicos.',
+    source: 'Vias de Administração - Slide 52'
+  },
+  {
+    id: 'vias_adm_9',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'Como é chamado o evento adverso não planejado em terapia intravenosa no qual há o vazamento de soluções não vesicantes da luz do vaso sanguíneo para o espaço intersticial adjacente, causando edema frio, dor, palidez local e lentidão na infusão do equipo?',
+    type: 'multiple-choice',
+    options: [
+      'Tromboflebite purulenta.',
+      'Infiltração (ou extravasamento).',
+      'Espasmo arterial traumático.',
+      'Embolia gasosa coronária.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A infiltração ocorre quando um fluido injetado por cateter se espalha para o tecido subcutâneo porque a agulha ou cateter perfurou a veia ou deslocou-se de seu lúmen. Se o fármaco for irritante/vesicante extremo (ex: quimioterápicos, aminas), o quadro é classificado como extravasamento.',
+    source: 'Vias de Administração - Slide 23'
+  },
+  {
+    id: 'elim_int_6',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Médio',
+    questionText: 'Ao realizar um enteroclisma de grande volume (ex: 1000 mL de soro morno glicerinado), qual a altura adequada de suspensão do frasco que o profissional de enfermagem deve estabelecer para regular a pressão hídrica no reto?',
+    type: 'multiple-choice',
+    options: [
+      'A altura é irrelevante, bastando abrir totalmente a pinça do equipo.',
+      'Aproximadamente 30 a 45 cm acima do nível do quadril/leito do paciente.',
+      'Pelo menos de 100 a 150 cm acima das pernas do paciente.',
+      'No mesmo nível das cobertas do paciente.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A altura correspondente a 30-45 cm do nível do quadril regula a gravidade do fluxo. Uma altura maior cria pressão hidrostática muito alta de forma repentina, forçando o estiramento das paredes intestinais, o que gera imediata dor cólica aguda, contração repentina do reto e expulsão precipitada do líquido sem realizar a higiene ou amaciamento corretos.',
+    source: 'Lavagem Intestinal - Slide 46 / Exercício 2'
+  },
+  {
+    id: 'elim_int_7',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Fácil',
+    questionText: 'A lavagem intestinal (enemas de esvaziamento) contra fecalomas impõe movimentos para as sondas retais de borracha. No entanto, o cateter retal deve ser sempre lubrificado antes da aplicação para evitar microfissuras e dor ao paciente.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Verdadeiro',
+    explanation: 'Injetar sondas secas sem amaciantes rompe ou escoria os dobras do ânus e esfíncter retal. Lubrificar a ponta da sonda retal com vaselina em gel ou xilocaína solúvel por 5-7 cm reduz drasticamente o trauma doloroso mecânico inicial de inserção e facilita o deslizamento sob a curvatura sigmoide.',
+    source: 'Lavagem intestinal - Slides 45 e 51'
+  },
+  {
+    id: 'elim_int_8',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Médio',
+    questionText: 'Qual a temperatura ideal das soluções e líquidos para infusão na lavagem intestinal e enemas, e o porquê dessa regulamentação de segurança?',
+    type: 'multiple-choice',
+    options: [
+      'Gelada (entre 4°C e 8°C) para provocar paradas de sangramento e vasoconstrição.',
+      'Morna (aproximadamente entre 37°C e 38°C), próxima à escala normal de temperatura do corpo humano, pois líquidos frios geram espasmos cólicos dolorosos intensos e quentes causam graves lesões térmicas de queimadura intestinal.',
+      'Aquecido ao ponto máximo de vaporização (acima de 55°C) para dissolver os gases.',
+      'Qualquer ponto térmico de termômetro ambiente.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A temperatura tépida ou morna do enema (37°C a 38°C) é vital para acomodar as mucosas sensíveis do intestino sem provocar hiperestimulação mecânica por frio (cólicas lancinantes, diarreia explosiva precoce) ou sérias queimaduras de necrose do tecido por calor excessivo.',
+    source: 'Lavagem Intestinal - Slide 45'
+  },
+  {
+    id: 'elim_int_9',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Fácil',
+    questionText: 'Ao descrever a eliminação fecal de um paciente de enfermaria após realização de enteroclisma, o técnico observa fezes em forma de esferas pequenas, duras, cinzentas e totalmente secas devido ao atraso crônico de trânsito estomacal-biliar. O termo correto para essas fezes ressecadas é:',
+    type: 'multiple-choice',
+    options: [
+      'Melena espumosa com sangue digerido.',
+      'Fezes escibalosas (ou cíbalas).',
+      'Fezes esteatorreicas amareladas.',
+      'Diarreia pastosa mucilaginosa.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'As cíbalas ou escíbalos (fezes escibalosas) consistem em pequenos aglomerados de matéria fecal fragmentada e endurecida pela intensa retirada de água na porção do intestino grosso, sinal característico de grave constipação e obstipação digestória prolongada.',
+    source: 'Lavagem Intestinal - Slide 39'
+  },
+  {
+    id: 'sond_ves_6',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Difícil',
+    questionText: 'Com relação aos limites legais profissionais estabelecidos pelo COFEN, qual o papel e limites do Técnico de Enfermagem face ao cateterismo e sondagem vesical de demora (SVD)?',
+    type: 'multiple-choice',
+    options: [
+      'O técnico tem autonomia completa para decidir, inserir e assinar o cateterismo em qualquer doente cirúrgico.',
+      'A inserção física do cateter vesical estéril (procedimento de alta complexidade e técnica estéril) é privativa do Enfermeiro (ou Médico); contudo, ao técnico de enfermagem cabe de direito e obrigação preparar o paciente, organizar toda a bandeja limpa estéril, atuar ativamente no auxílio sob supervisão e realizar os cuidados diários.',
+      'O técnico de enfermagem é proibido de sequer tocar no coletor de urina ou esvaziar a bolsa devido ao risco de contaminação.',
+      'O técnico deve realizar exclusivamente a passagem da sonda de demora sob técnica não-estéril doméstica de banho.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'O parecer oficial COFEN e a lei do exercício profissional definem que o cateterismo vesical é ato invasivo de rica complexidade técnica e requer enfermeiro qualificado em sua passagem urinária direta. O técnico participa fortemente arranjando mesas estéreis, higienizando o paciente, fornecendo suprimentos com técnica asséptica e zelando pelas anotações de diurese subsequentes.',
+    source: 'Sondagem Vesical - Slide 59 e Exercício 1'
+  },
+  {
+    id: 'sond_ves_7',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Médio',
+    questionText: 'Para qual finalidade serve a insuflação do balão de fixação interno (balonete) na extremidade anterior da Sonda Foley de SVD e qual a substância prescrita para isso?',
+    type: 'multiple-choice',
+    options: [
+      'Serve para expandir a bexiga desidratada, sendo preenchido com vaselina.',
+      'Serve para ancorar a sonda no trígono vesical e reter sua passagem para fora da uretra, sendo preenchido única e exclusivamente com Água Destilada estéril.',
+      'Serve para aspirar sangramentos vesicais ativos, sendo preenchido com ar do ambiente.',
+      'Serve para lubrificar a urina por liberação prolongada, sendo preenchido com Solução Salina (SF 0,9%) concentrada.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'O balonete serve como âncora para a sonda interna. Deve ser preenchido exclusivamente com água destilada. O uso de Soro Fisiológico (SF) é proscrito para balonetes devido ao risco de formação de cristais de sal de cloreto de sódio que obstruem a válvula piloto, impedindo ou dificultando sua desinsuflação na hora da retirada e provocando dores e espasmos uretrais graves na decateterização do paciente.',
+    source: 'Sondagem Vesical - Slide 64'
+  },
+  {
+    id: 'sond_ves_8',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Fácil',
+    questionText: 'Como se define clinicamente a queixa clínica freqüente na beira do leito de enfermagem em que um paciente com sonda de Foley ou em regime autônomo refere dor intensa, ardor estomacal ou queimação mecânica profunda à micção?',
+    type: 'multiple-choice',
+    options: [
+      'Hesitação pélvica crônica.',
+      'Disúria.',
+      'Anúria obstrutiva.',
+      'Hematúria infecciosa.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'O termo semiológico disúria abrange dor, queimação, ardor, peso agudo ou desconforto durante o escoamento ou eliminação urinária. É uma queixa comum pós-inserção traumática ou sinal preditivo de Infecção do Trato Urinário (ITU).',
+    source: 'Sondagem Vesical - Termos Técnicos Slide 71'
+  },
+  {
+    id: 'sond_ves_9',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Médio',
+    questionText: 'A manifestação de urina com alteração de pigmento para vermelho ou laranja em pacientes sem infecção urinária ativa ou sangramentos, mas que realizam tratamento antituberculose com Rifampicina ou uso sintomático de Piridium (Fenazopiridina), é benigno e não representa hemorragia.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Verdadeiro',
+    explanation: 'As substâncias corantes contidas em fármacos de alta excreção renal (ex: metilfármacos, Rifampicina ou Piridium de efeito anestésico) tingem de forma passageira e inócua a cor urinária com matizes vermelhos, avermelhados ou laranjas. Essa variação benévola não deve ser interpretada de imediato como hematúria ativa ou urosepse pelo técnico, sendo prudente acalmar e educar os familiares e paciente.',
+    source: 'Sondagem Vesical - Slide 71'
+  },
+  {
+    id: 'antrop_4',
+    topic: 'Medidas Antropométricas',
+    difficulty: 'Fácil',
+    questionText: 'Para a exata mensuração da estatura linear de um paciente adulto hígido em pé utilizando escala de estadiômetro de parede ou balança mecânica de pé, o paciente deve estar ereto, descalço, com calcanhares unidos e encostando ombros, nádegas sãs e região occipital na haste graduada.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Verdadeiro',
+    explanation: 'Conforme descrito no material (Slide 7), o alinhamento corporal reto (plano de Frankfurt paralelo ao horizonte) e os calcanhares juntos, nádegas e omoplata em perfeito paralelo contra a balança garantem menor taxa de erro milimétrico por deflexões na coluna.',
+    source: 'Medidas Antropométricas - Slide 7'
+  },
+  {
+    id: 'antrop_5',
+    topic: 'Medidas Antropométricas',
+    difficulty: 'Médio',
+    questionText: 'A métrica RCQ (Relação Cintura-Quadril) é largamente avaliada nos exames físicos preventivos de cardiologia. Qual a fórmula correta do seu cálculo matemático e qual seu significado de controle clínico de riscos à saúde do adulto?',
+    type: 'multiple-choice',
+    options: [
+      'Multiplica-se a circunferência da cintura pela do quadril; serve unicamente para estimar gordura periférica da panturrilha do idoso.',
+      'Divide-se a circunferência da cintura (em centímetros) pelo perímetro do quadril (em centímetros); funciona como um biomarcador preditivo de distribuição de tecido adiposo androide (gordura visceral alta), indicador de maior taxa de infarto agudo do miocárdio, dislipidemia e hipertensão arterial.',
+      'Divide-se o peso pela cintura elevada ao quadrado; mede o desjejum e riscos de anemia crônica.',
+      'Equivale à soma simples da cintura, idade e altura dividido por 10; mede a esclerose arterial pélvica.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A equação simples consiste em dividir Cintura (cm) pelo Quadril (cm). O valor resultante reflete a adiposidade visceral (padrão androide ou formato "maçã"), que se associa de forma direta a maior inflamação sistêmica, estresse vascular e distúrbios cardiovascular de risco aterogênico.',
+    source: 'Medidas Antropométricas - Slide 6'
+  },
+  {
+    id: 'antrop_6',
+    topic: 'Medidas Antropométricas',
+    difficulty: 'Fácil',
+    questionText: 'Em idosos ou acamados impossibilitados de locomoção ou posição ereta estável sobre balanças tradicionais, o peso e estatura gerais de saúde podem ser calculados de forma indireta e aceitável através de fórmulas matemáticas que utilizam antropometria local como altura do joelho e perímetro da panturrilha.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Verdadeiro',
+    explanation: 'De acordo com o material (Slide 12), em situações em que o paciente se encontra imobilizado ou com sérias paraplegias, utilizam-se equações preditivas científicas aceitas (tais como a consagrada equação de Chumlea), que predizem fidedignamente o peso aproximado para dosagem e monitoramento nutricional no leito.',
+    source: 'Medidas Antropométricas - Slide 12'
   }
 ];
+
