@@ -1,0 +1,6 @@
+{
+  "name": "CURSO ENFERMAGEM QUESTIONARIO - CTT",
+  "description": "Sistema de perguntas, respostas e simulador de estudos para o Curso Técnico em Enfermagem do Colégio Técnico de Teresina.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
