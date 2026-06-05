@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Award, BookOpen, GraduationCap, ClipboardList, Book, Calculator, RotateCcw, Volume2, UserCircle, Trophy } from 'lucide-react';
+import { Award, BookOpen, GraduationCap, ClipboardList, Book, Calculator, RotateCcw, Volume2, UserCircle, Trophy, Sparkles } from 'lucide-react';
 import Dashboard from './components/Dashboard';
 import StudyView from './components/StudyView';
 import QuizView from './components/QuizView';
 import CalculatorView from './components/CalculatorView';
 import DictionaryView from './components/DictionaryView';
+import AIChatView from './components/AIChatView';
 import { UserStats } from './types';
 
 // Default mock statistics
@@ -18,7 +19,7 @@ const DEFAULT_STATS: UserStats = {
 };
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'dash' | 'study' | 'quiz' | 'calc' | 'dict'>('dash');
+  const [activeTab, setActiveTab] = useState<'dash' | 'study' | 'quiz' | 'calc' | 'dict' | 'ai-chat'>('dash');
   const [stats, setStats] = useState<UserStats>(DEFAULT_STATS);
 
   // Load from LocalStorage on mount
@@ -101,6 +102,7 @@ export default function App() {
                 { id: 'quiz', label: 'Simulados', desc: 'Testes e casos práticos', icon: Award },
                 { id: 'calc', label: 'Cálculos', desc: 'Gotejamento e doses', icon: Calculator },
                 { id: 'dict', label: 'Dicionário', desc: 'Termos de Enfermagem', icon: Book },
+                { id: 'ai-chat', label: 'Monitor IA', desc: 'Tirar dúvidas acadêmicas', icon: Sparkles },
               ].map((item) => {
                 const IconComponent = item.icon;
                 const isActive = activeTab === item.id;
@@ -211,6 +213,7 @@ export default function App() {
           )}
           {activeTab === 'calc' && <CalculatorView />}
           {activeTab === 'dict' && <DictionaryView />}
+          {activeTab === 'ai-chat' && <AIChatView />}
         </main>
 
         {/* Footer info at bottom of wrapper */}
@@ -222,15 +225,15 @@ export default function App() {
       </div>
 
       {/* MOBILE BAR NAVIGATION (BOTTOM) */}
-      <div className="md:hidden sticky bottom-0 z-40 bg-white border-t border-slate-100 shadow-lg grid grid-cols-5 h-16 py-1">
+      <div className="md:hidden sticky bottom-0 z-40 bg-white border-t border-slate-100 shadow-lg grid grid-cols-6 h-16 py-1">
         <button
           onClick={() => setActiveTab('dash')}
           className={`flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
             activeTab === 'dash' ? 'text-indigo-600 font-extrabold' : 'text-slate-400 text-xs'
           }`}
         >
-          <ClipboardList className="h-5 w-5" />
-          <span className="text-[9px] uppercase font-mono tracking-wider">Início</span>
+          <ClipboardList className="h-4.5 w-4.5" />
+          <span className="text-[8px] uppercase font-mono tracking-wider">Início</span>
         </button>
         <button
           onClick={() => setActiveTab('study')}
@@ -238,8 +241,8 @@ export default function App() {
             activeTab === 'study' ? 'text-indigo-600 font-extrabold' : 'text-slate-400 text-xs'
           }`}
         >
-          <BookOpen className="h-5 w-5" />
-          <span className="text-[9px] uppercase font-mono tracking-wider">Sumários</span>
+          <BookOpen className="h-4.5 w-4.5" />
+          <span className="text-[8px] uppercase font-mono tracking-wider">Sumários</span>
         </button>
         <button
           onClick={() => setActiveTab('quiz')}
@@ -247,8 +250,8 @@ export default function App() {
             activeTab === 'quiz' ? 'text-indigo-600 font-extrabold' : 'text-slate-400 text-xs'
           }`}
         >
-          <Award className="h-5 w-5" />
-          <span className="text-[9px] uppercase font-mono tracking-wider">Simular</span>
+          <Award className="h-4.5 w-4.5" />
+          <span className="text-[8px] uppercase font-mono tracking-wider">Simular</span>
         </button>
         <button
           onClick={() => setActiveTab('calc')}
@@ -256,8 +259,8 @@ export default function App() {
             activeTab === 'calc' ? 'text-indigo-600 font-extrabold' : 'text-slate-400 text-xs'
           }`}
         >
-          <Calculator className="h-5 w-5" />
-          <span className="text-[9px] uppercase font-mono tracking-wider">Contas</span>
+          <Calculator className="h-4.5 w-4.5" />
+          <span className="text-[8px] uppercase font-mono tracking-wider">Contas</span>
         </button>
         <button
           onClick={() => setActiveTab('dict')}
@@ -265,8 +268,17 @@ export default function App() {
             activeTab === 'dict' ? 'text-indigo-600 font-extrabold' : 'text-slate-400 text-xs'
           }`}
         >
-          <Book className="h-5 w-5" />
-          <span className="text-[9px] uppercase font-mono tracking-wider">Dicio</span>
+          <Book className="h-4.5 w-4.5" />
+          <span className="text-[8px] uppercase font-mono tracking-wider">Dicio</span>
+        </button>
+        <button
+          onClick={() => setActiveTab('ai-chat')}
+          className={`flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
+            activeTab === 'ai-chat' ? 'text-indigo-600 font-extrabold' : 'text-slate-400 text-xs'
+          }`}
+        >
+          <Sparkles className="h-4.5 w-4.5" />
+          <span className="text-[8px] uppercase font-mono tracking-wider">IA Monitor</span>
         </button>
       </div>
     </div>
