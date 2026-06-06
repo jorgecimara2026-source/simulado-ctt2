@@ -214,21 +214,39 @@ export default function QuizView({ stats, onUpdateStats }: QuizViewProps) {
                 <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 font-mono">
                   Volume de Questões:
                 </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {[3, 5, 10].map((num) => (
-                    <button
-                      key={num}
-                      type="button"
-                      onClick={() => setQuestionCount(num)}
-                      className={`py-2 px-3 text-xs font-bold rounded-lg border transition-all cursor-pointer ${
-                        questionCount === num
-                          ? 'bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-600/10'
-                          : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
-                      }`}
-                    >
-                      {num} Questões
-                    </button>
-                  ))}
+                <div className="grid grid-cols-2 sm:grid-cols-6 gap-2">
+                  {[5, 10, 15, 20, 30, 50].map((num) => {
+                    const pool = QUESTIONS_BANK.filter((q) => {
+                      const matchTopic = selectedTopic === 'todos' || q.topic === selectedTopic;
+                      const matchDiff = selectedDifficulty === 'todas' || q.difficulty === selectedDifficulty;
+                      return matchTopic && matchDiff;
+                    });
+                    const disabled = pool.length < num && num > 5; // Do not disable 5 as basic, but allow higher depending on availability
+                    return (
+                      <button
+                        key={num}
+                        type="button"
+                        disabled={disabled}
+                        onClick={() => setQuestionCount(num)}
+                        className={`py-2 px-1 text-xs font-bold rounded-lg border transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed ${
+                          questionCount === num
+                            ? 'bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-600/10'
+                            : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
+                        }`}
+                      >
+                        {num} Questões
+                      </button>
+                    );
+                  })}
+                </div>
+                <div className="mt-2 text-xs text-indigo-600 font-medium font-mono">
+                  Questões disponíveis para estes filtros: {
+                    QUESTIONS_BANK.filter((q) => {
+                      const matchTopic = selectedTopic === 'todos' || q.topic === selectedTopic;
+                      const matchDiff = selectedDifficulty === 'todas' || q.difficulty === selectedDifficulty;
+                      return matchTopic && matchDiff;
+                    }).length
+                  }
                 </div>
               </div>
 

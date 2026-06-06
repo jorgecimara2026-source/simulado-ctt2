@@ -1,6 +1,17 @@
 import { Question } from '../types';
+import { SNG_SNE_EXTRA_QUESTIONS } from './questions_part1';
+import { VIAS_LAVAGEM_EXTRA_QUESTIONS } from './questions_part2';
+import { SOND_ANTROP_OXIG_EXTRA_QUESTIONS } from './questions_part3';
+import { SNG_SNE_MORE_QUESTIONS } from './more_questions_sng';
+import { CALC_MORE_QUESTIONS } from './more_questions_calc';
+import { VIAS_MORE_QUESTIONS } from './more_questions_vias';
+import { LAVAGEM_MORE_QUESTIONS } from './more_questions_lavagem';
+import { SONDAGEM_MORE_QUESTIONS } from './more_questions_sondagem';
+import { ANTROPOMETRIA_MORE_QUESTIONS } from './more_questions_antropometria';
+import { OXIGENOTERAPIA_MORE_QUESTIONS } from './more_questions_oxigenoterapia';
+import { CALC_MORE_EXTRA_QUESTIONS } from './more_questions_calc_extra';
 
-export const QUESTIONS_BANK: Question[] = [
+const RAW_QUESTIONS_BANK: Question[] = [
   // --- TOPIC: SNG e SNE ---
   {
     id: 'sng_sne_1',
@@ -860,6 +871,779 @@ export const QUESTIONS_BANK: Question[] = [
     correctAnswer: 'Verdadeiro',
     explanation: 'De acordo com o material (Slide 12), em situações em que o paciente se encontra imobilizado ou com sérias paraplegias, utilizam-se equações preditivas científicas aceitas (tais como a consagrada equação de Chumlea), que predizem fidedignamente o peso aproximado para dosagem e monitoramento nutricional no leito.',
     source: 'Medidas Antropométricas - Slide 12'
-  }
+  },
+  {
+    id: 'sng_sne_11',
+    topic: 'SNG e SNE',
+    difficulty: 'Médio',
+    questionText: 'A Sonda de Levine (sonda nasogástrica simples de lúmen único) é confeccionada em cloreto de polivinila (PVC) flexível ou plástico cristal, indicada principalmente para quais finalidades no ambiente de enfermaria?',
+    type: 'multiple-choice',
+    options: [
+      'Confeccionada para alimentação enteral definitiva prolongada (por meses ou anos) com menor taxa de desconforto pélvico.',
+      'Drenagem temporária de resíduos gástricos (descompressão para alívio de distensão abdominal, pós-operatórios ou em casos de oclusão intestinal) ou infusão rápida de carvão ativado em intoxicações agudas.',
+      'Feita para canular vias biliares ou artéria renal sob pressão hidráulica de infusores manuais.',
+      'Indicada exclusivamente para hidratação pulmonar de pacientes asmáticos desidratados.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A sonda de Levine (PVC comum) é excelente para lavagem, esvaziamento ácido, drenagem por sifonagem/vácuo de ar e líquidos retidos no estômago, ou para curta nutrição. Sendo um plástico mais rígido que o silicone, não deve permanecer por semanas sob o risco de provocar úlceras e necrose das fossas nasais ou esôfago (Slide 8).',
+    source: 'SNG e SNE - Slide 8'
+  },
+  {
+    id: 'sng_sne_12',
+    topic: 'SNG e SNE',
+    difficulty: 'Difícil',
+    questionText: 'Além do método tradicional NEX (Nariz-Orelha-Xifoide) utilizado para medir a linha de progressão da SNG/SNE, qual adaptação científica ou acréscimo de medida é sugerida para garantir que a ponta atinja e se instale integralmente na cavidade estomacal ou duodenal profunda, reduzindo risco de posicionamento esofágico alto?',
+    type: 'multiple-choice',
+    options: [
+      'Adicionar de 10 a 15 cm à extensão medida tradicionalmente no método NEX (ou marcar a metade da distância entre o apêndice xifoide e a cicatriz umbilical como margem extra de avanço).',
+      'Subtrair 10 centímetros do resultado final NEX para compensar a curvatura natural externa do pescoço ou laringe superior.',
+      'Dividir a distância NEX por dois para evitar perfuração gástrica mecânica.',
+      'Não realizar nenhuma verificação de comprimento e introduzir o cateter até que toda a sonda tenha sumido no nariz.'
+    ],
+    correctAnswer: 'A',
+    explanation: 'Pesquisas clínicas de nutrição mostram que a tradicional medida NEX em adultos muitas vezes deixa os orifícios proximais da sonda no esôfago, aumentando risco de pneumonia por aspiração do material. A adição de 10 a 15 cm adicionais ou aferir a distância até a metade da reta ventral entre apêndice xifoide e umbigo garante o posicionamento gástrico ideal (Slide 13).',
+    source: 'SNG e SNE - Slide 13'
+  },
+  {
+    id: 'calc_med_12',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Médio',
+    questionText: 'Prescrição médica de Soro Glicosado (SG) 5% com volume de 500 mL para infusão intravenosa contínua a correr em exatas 4 horas. Quantas gotas por minuto (macrogotas/min) o técnico em enfermagem deve regular no equipo clássico?',
+    type: 'calculation',
+    correctAnswer: '42',
+    explanation: 'Aplicamos a fórmula de gotas por minuto em base horária:\nGotas/min = Volume / (Tempo * 3)\nGotas/min = 500 / (4 * 3)\nGotas/min = 500 / 12\nGotas/min = 41.66 ≈ 42 gotas/min (aplicando arredondamento usual de gotejo).',
+    source: 'Cálculos de Gotejamento - Slide 44',
+    calculationSteps: [
+      '1. Seleção da fórmula básica: Gotas/min = Volume em mL / (Horas de infusão * 3)',
+      '2. Coleta de dados clínicos: Volume = 500 mL, Tempo = 4 horas',
+      '3. Substituição na fórmula: Gotas/min = 500 / (4 * 3) = 500 / 12',
+      '4. Divisão matemática: 500 / 12 = 41,66 gotas/min',
+      '5. Arredondamento profissional na beira do leito: 42 gotas/min.'
+    ]
+  },
+  {
+    id: 'calc_med_13',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Difícil',
+    questionText: 'Prescrição de Heparina Sódica profilática de 2.500 UI por via subcutânea (SC) de 12/12h. No almoxarifado do setor há frascos-ampolas de Heparina contendo concentração de 5.000 UI por mL (5.000 UI/mL) e seringas milimetradas estéreis graduadas de 1 mL (seringas de insulina, onde cada 0,1 mL representa 10 divisões finas). Quantos mL do fármaco o técnico de enfermagem deve aspirar?',
+    type: 'calculation',
+    correctAnswer: '0.5',
+    explanation: 'Montagem da proporção linear simples:\n5.000 UI -------- 1,0 mL\n2.500 UI -------- x mL\n5.000 * x = 2.500 * 1\n5.000x = 2.500\nx = 2.500 / 5.000 = 0,5 mL.\nO técnico deve aspirar exatamente 0,5 mL (ou 50 subdivisões da seringa de 1 mL).',
+    source: 'Cálculos de Dosagens de Medicamentos - Slide 26',
+    calculationSteps: [
+      '1. Identificar concentração disposta: 5.000 UI estão contidas em cada 1 mL de Heparina líquida.',
+      '2. Estrutura de três simples: 5000 UI -> 1 mL | 2500 UI -> x mL',
+      '3. Cruzar produtos: 5000 * x = 2500',
+      '4. Divisão linear: x = 2500 / 5000 = 0,5 mL de heparina.'
+    ]
+  },
+  {
+    id: 'vias_adm_10',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'A aplicação de vacinas e hormônios por Via Subcutânea (SC) exige técnica segura detalhada de prega tecidual. Quais são os sítios anatômicos comumente indicados para aplicação sistemática da via SC e quais os ângulos clássicos sugeridos para agulha dependendo de tecido adiposo individual?',
+    type: 'multiple-choice',
+    options: [
+      'Grande glúteo e porção do tríceps proximal; ângulo reto de 90° apenas para agulhas maiores e magros.',
+      'Porção posterior dos braços, quadrante periumbilical (abdômen), lateral externa das coxas ou superior do dorso (infraescapular); ângulo de 45° (com agulha longa convencional de 1,5 cm em magros) a 90° (utilizando agulhas ultracurtas menores de 1 cm ou em indivíduos obesos).',
+      'Borda ulnar externa do punho e fossa poplítea posterior; ângulo fixo de 5° raspando epiderme.',
+      'Canal palmar e tornozelo lateral; ângulo oblíquo de 30°.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A via subcutânea ou hipodérmica (Slide 49) absorve medicamentos de forma lenta e contínua devido à menor densidade vascular deste tecido gorduroso abdominal, braquial ou coxal. O ajuste do ângulo de introdução (45° a 90°) baseia-se diretamente na espessura da prega e no tamanho de haste da agulha estéril disponível para prevenir dor periosteal profunda ou injeção acidental em fibras musculares íntimas.',
+    source: 'Vias de Administração - Slide 49'
+  },
+  {
+    id: 'vias_adm_11',
+    topic: 'Vias de Administração',
+    difficulty: 'Fácil',
+    questionText: 'Ao planejar administrar uma injeção por via Intramuscular (IM) usando o músculo deltoide (região deltoidiana) em pacientes adultos saudáveis na atenção primária, qual o limite máximo volumétrico líquido recomendado pela literatura científica para este sítio muscular acessório?',
+    type: 'multiple-choice',
+    options: [
+      'No máximo 5 mL de fármacos oleosos densos.',
+      'Entre 3 mL e 4 mL de antibióticos concentrados.',
+      'No máximo 1 mL (admitindo-se excepcionalmente até 1,5 mL caso o paciente apresente excelente e avantajada constituição de massa de deltoide).',
+      'Até 10 mL divididos obrigatoriamente em duas punções de agulhas cirúrgicas.'
+    ],
+    correctAnswer: 'C',
+    explanation: 'O deltoide é um músculo pequeno e desprovido de grandes bainhas anatômicas. A injeção de volumes acima de 1 mL a 1,5 mL neste local gera dores excruciantes, edema grave por compressão vascular, distensão extrema das fibras e maior risco de compressão do nervo radial ou circunflexo (Slide 52).',
+    source: 'Vias de Administração - Sítio Deltoidiano Slide 52'
+  },
+  {
+    id: 'vias_adm_12',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'No tocante à aplicação intramuscular profunda e segura de medicamentos em adultos de grande porte ou obesos (como benzilpenicilina ou diclofenaco sódico), qual calibre e comprimento de agulha estéril descartável é usualmente eleito para assegurar que a substância transpasse a epiderme/tecido subcutâneo e alcance o ventre muscular de forma eficiente?',
+    type: 'multiple-choice',
+    options: [
+      'Agulha calibre 13 x 4,5 mm.',
+      'Agulhas calibre 30 x 7 mm ou 30 x 8 mm.',
+      'Agulha calibre 40 x 12 mm exclusivamente.',
+      'Agulha calibre 20 x 5,5 mm.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A escolha da agulha depende do biotipo do assistido. Para adultos saudáveis em músculo dorso ou ventroglúteo, a agulha de 30x7 mm ou 30x8 mm garante o depósito intramuscular seguro. Se utilizarmos agulhas muito curtas (ex: 20x5,5 ou 13x4,5), o fármaco corre o sério risco de ficar depositado apenas no tecido subcutâneo subcuticular, gerando nódulos de necrose necrosante dérmica tardia por irritação.',
+    source: 'Vias de Administração - Materiais e Agulhas'
+  },
+  {
+    id: 'elim_int_10',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Difícil',
+    questionText: 'O preparo clínico e posicionamento do paciente no leito são vitais para o gotejamento confortável e retenção do enteroclisma/enema. Qual decúbito e posição específica o paciente deve assumir no leito para a realização do enteroclisma?',
+    type: 'multiple-choice',
+    options: [
+      'Posição de Trendelenburg com as pernas suspensas por cintas.',
+      'Decúbito lateral esquerdo com o membro inferior direito flectido em direção ao esterno (Posição de Sims), pois esta conformação facilita o fluxo natural e trânsito do líquido em direção ao cólon sigmoide e descendente.',
+      'Decúbito dorsal plano com as pernas abertas sobre estribos (posição ginecológica).',
+      'Decúbito lateral direito estrito com a coluna curvada.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A anatomia do intestino grosso exibe o cólon sigmoide e descendente descendo pela parede cavitária abdominal esquerda. Posicionar o paciente em decúbito lateral esquerdo (posição de Sims) faz com que a gravidade acomode a solução de limpeza no curso anatômico, minimizando espasmos dolorosos imediatos e auxiliando na eliminação e limpeza de fezes retidas (Slide 45).',
+    source: 'Lavagem intestinal - Slide 45'
+  },
+  {
+    id: 'elim_int_11',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Médio',
+    questionText: 'A lavagem intestinal (enemas ou enteroclismas de esvaziamento) contra fecalomas impõe movimentos precisos. No entanto, o procedimento é formalmente contraindicado em quais patologias gástricas?',
+    type: 'multiple-choice',
+    options: [
+      'Obstipação intestinal crônica severa.',
+      'Retocolite ulcerativa ativa em fase de sangramento, apendicite aguda suspeita de abdômen agudo vascular inflamatório ou perfuração de alça conhecida.',
+      'Excesso de flatulências alimentares pós-estágio dietético.',
+      'Preparo cirúrgico pré-operatório para videocolonoscopias rotineiras.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A infusão de grandes volumes de soluções laxativas em tecidos inflamados agudamente (como no apêndice inflamado ou reto ulcerativo) impõe estresse físico severo que pode romper a parede da alça, gerando vazamento de fezes para o peritônio, peritonite fecal de alta mortalidade e choque séptico intestinal (Slide 43).',
+    source: 'Lavagem intestinal - Slide 43'
+  },
+  {
+    id: 'sond_ves_10',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Médio',
+    questionText: 'O cateterismo vesical de alívio (feito com sonda reta simples de Nelaton) difere fundamentalmente do cateterismo vesical de demora (Foley) em quais aspectos operacionais e de indicação diagnóstica?',
+    type: 'multiple-choice',
+    options: [
+      'O cateterismo de alívio dispensa assepsia cirúrgica avançada e pode ser passado sem luvas.',
+      'O de alívio visa esvaziar a bexiga pontualmente (retenção aguda de urina, coleta de urina estéril de jato médio, exames) e é imediatamente retirado após drenagem total de urina, não apresentando balão de fixação interno que ancoraria no trígono pélvico.',
+      'O de alívio deve permanecer no paciente por meses estipulados de tratamento diário de infecções biliar-urinárias.',
+      'O de alívio serve unicamente para drenar secreções biliares profundas de pacientes graves acamados.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A sonda de Nelaton (cateterismo de alívio) é flexível, de lúmen único e fina. O objetivo é retirar a urina e remover a sonda de imediato, e por este motivo não é dotada de balonete ou canal auxiliar para fixação. É um procedimento de técnica estéril profunda para prevenir infecção hospitalar secundária (Slide 60).',
+    source: 'Sondagem Vesical - Tipos de Sondas Slide 60'
+  },
+  {
+    id: 'sond_ves_11',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Fácil',
+    questionText: 'Para prevenir infecções do trato urinário associadas a cateterismo vesical (ITU-ACV) em pacientes em uso de SVD no leito de enfermaria, qual é uma das principais recomendações de biossegurança de enfermagem?',
+    type: 'multiple-choice',
+    options: [
+      'Manter a bolsa coletora sempre apoiada nas cobertas de cima ou no colo do paciente.',
+      'Manter e fixar a bolsa de urina permanentemente abaixo do nível da bexiga do paciente (livre e pendurada em grades baixas) para evitar o fluxo reverso gravitacional de urina colonizada para o trato urinário superior, além de esvaziá-la regularmente sem encostar a torneira no chão.',
+      'Esvaziar o coletor de urina semanalmente para evitar contato aerossol.',
+      'Infundir sabão bactericida de rotina por dentro do cano da sonda para lavar glândulas urinárias.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'No manejo de manutenção do cateter vesical estéril, o refluxo da urina retida na mangueira ou na bolsa é uma das principais causas de translocação bacteriana retrógrada e sepse urinária. Manter a bolsa abaixo da bexiga impede o refluxo. Zela-se também em nunca deixar a bolsa coletora encostar direta no solo clínico (Slides 65-66).',
+    source: 'Sondagem Vesical - Cuidados Slide 65'
+  },
+  {
+    id: 'antrop_7',
+    topic: 'Medidas Antropométricas',
+    difficulty: 'Médio',
+    questionText: 'O Cálculo do Índice de Massa Corporal (IMC) é rotineiramente aferido na semiologia básica. Se um estudante ou paciente apresenta peso de 80 kg e estatura de 1,60 m, qual do valores assevera seu IMC e sua exata classificação conforme a OMS?',
+    type: 'multiple-choice',
+    options: [
+      'IMC de 25 kg/m²; classificado como Eutrófico (peso ideal adequado para os padrões de idade).',
+      'IMC de 31,25 kg/m²; classificado como Obesidade Grau I.',
+      'IMC de 19,4 kg/m²; classificado como Baixo Peso severo com risco de desidratação crônica.',
+      'IMC de 42,0 kg/m²; classificado como Obesidade Mórbida Grau III.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A fórmula matemática do IMC consiste em dividir o peso pelo quadrado da altura:\nIMC = Peso / (Altura * Altura)\nIMC = 80 / (1,60 * 1,60)\nIMC = 80 / 2,56 = 31,25 kg/m².\nSegundo a classificação da Organização Mundial da Saúde (OMS), valores de IMC situados entre 30,0 e 34,9 kg/m² configuram quadro clínico de Obesidade Grau I (Slide 5).',
+    source: 'Medidas Antropométricas - Slide 5'
+  },
+  {
+    id: 'antrop_8',
+    topic: 'Medidas Antropométricas',
+    difficulty: 'Médio',
+    questionText: 'Para a exata e confiável aferição clínica da Circunferência de Cintura (CC) a fim de apurar riscos coronários, qual marco esquelético anatômico referencial deve guiar o posicionamento plano da fita métrica maleável?',
+    type: 'multiple-choice',
+    options: [
+      'Logo na altura da penúltima costela aparente anterior.',
+      'No ponto médio horizontal entre o rebordo costal inferior (última costela flutuante) e a crista ilíaca superior lateral (geralmente coincidente ou logo acima da cicatriz do umbigo em condições normais).',
+      'No ponto 15 centímetros abaixo de qualquer espinha do púbis.',
+      'Ao redor da coxa no nível superior reto da virilha.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A medição padronizada da circunferência abdominal (Slide 6) dita o posicionamento da fita métrica no plano horizontal no ponto médio entre a crista ilíaca anterior superior e a margem costal lateral inferior. Recomenda-se realizar a leitura ao final do movimento expiratório suave normal do paciente, registrando os centímetros correspondentes.',
+    source: 'Medidas Antropométricas - Slide 6'
+  },
+  // --- NOVAS QUESTÕES PROFUNDAS E DETALHADAS DE CADA PDF ---
+  {
+    id: 'sng_sne_13',
+    topic: 'SNG e SNE',
+    difficulty: 'Médio',
+    questionText: 'A ogiva pesada de mola de tungstênio (ou material radiopaco denso) inserida na ponta distal de uma Sonda de Dobhoff (sonda nasoenteral de poliuretano ou silicone) tem por finalidade assistencial primária:',
+    type: 'multiple-choice',
+    options: [
+      'Servir como canal de irrigação rápida de soro salino para o esôfago posterior.',
+      'Atuar como peso gravitacional e direcionador para que, auxiliada pela força de decúbito lateral direito e o peristaltismo gástrico normal, a sonda migre espontaneamente através do piloro até as porções post-pilóricas (duodeno/jejuno).',
+      'Permitir o esmagamento ativo de resíduos ou comprimidos insolúveis na asa nasal.',
+      'Saturar refluxos ácidos estomacais pelo vazamento constante de tungstênio estéril.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'As sondas de poliuretano (por exemplo, Dobhoff) são de calibre fino, extremamente flexíveis e confortáveis para nutrição enteral de médio a longo prazo. O peso distal denso radiopaco atua como guia gravitacional passivo guiado pelo peristaltismo normal gástrico para vencer a barreira esfincteriana do piloro (Slides 21-22).',
+    source: 'SNG e SNE - Slide 22'
+  },
+  {
+    id: 'sng_sne_14',
+    topic: 'SNG e SNE',
+    difficulty: 'Fácil',
+    questionText: 'Para prevenir a retenção de gordura e obstrução física de sondas nasoenterais, a lavagem ou flushing com água deve ser suspensa em pacientes de terapia intensiva sob ventilação mecânica ativa devido ao risco pulmonar.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Falso',
+    explanation: 'A irrigação periódica de manutenção com 20 a 30 mL de água potável limpa (Slide 18 e 26) é indispensável para todos os pacientes em uso de SNG ou SNE, inclusive doentes de terapia intensiva sob ventilação mecânica, sob risco de obstrução rápida do lúmen por precipitação química de dietas enterais densas ou resíduos de fármacos.',
+    source: 'SNG e SNE - Slide 18 e 26'
+  },
+  {
+    id: 'calc_med_14',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Médio',
+    questionText: 'Foi prescrita a infusão rápida de 500 mL de Soro Fisiológico (SF) 0,9% intravenoso para correr em exatamente 30 minutos (tempo menor que uma hora). Quantas gotas por minuto (gotas/min) o técnico em enfermagem deve programar no equipo tradicional por gravidade?',
+    type: 'calculation',
+    correctAnswer: '333',
+    explanation: 'Como o tempo (T) na prescrição clínica é expresso em minutos (T < 1 hora), utilizamos obrigatoriamente a fórmula de gotejamento correspondente em minutos: Gotas/min = (Volume em mL * 20) / Tempo em minutos. Substituindo os valores: Gotas/min = (500 * 20) / 30 = 10000 / 30 = 333,33 ≈ 333 gotas/min.',
+    source: 'Cálculos de Gotejamento - Slide 42',
+    calculationSteps: [
+      '1. Seleção da fórmula conveniente para tempo de infusão menor que 1h (em minutos): Gotas/min = (Volume * 20) / Tempo (minutos)',
+      '2. Coleta das variáveis: Volume = 500 mL, Tempo = 30 minutos',
+      '3. Substituir valores: Gotas/min = (500 * 20) / 30 = 10000 / 30',
+      '4. Resultados: 10000 / 30 = 333,33 gotas/min',
+      '5. Arredondamento padrão: 333 gotas/min.'
+    ]
+  },
+  {
+    id: 'calc_med_15',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Difícil',
+    questionText: 'O médico prescreveu Soro Glicosado (SG) concentrado a 15% contendo volume de 500 mL. No posto, o técnico dispõe apenas de bolsas de Soro Glicosado (SG) 5% de 500 mL e ampolas de Glicose hipertônica a 50% contendo volume de 10 mL. Quantas ampolas de Glicose 50% de 10 mL o técnico deve aspirar e injetar na bolsa de SG 5% para transformá-lo na concentração exata prescrita?',
+    type: 'calculation',
+    correctAnswer: '10',
+    explanation: '1. Calcular a quantidade de glicose pura necessária (15%): 15g em 100mL -> x g em 500mL => x = 75 g.\n2. Calcular a glicose já presente no soro disponível (5%): 5g em 100mL -> y g em 500mL => y = 25 g.\n3. Encontrar a massa a ser adicionada: 75 g - 25 g = 50 g de glicose pura.\n4. Calcular a glicose de cada ampola de 50% de 10 mL: 50g em 100mL -> z g em 10mL => z = 5 g por ampola.\n5. Calcular número de ampolas necessárias: 50 g necessárias / 5 g por ampola = 10 ampolas.',
+    source: 'Cálculo de Medicamentos - Slides 39 e 40',
+    calculationSteps: [
+      '1. Calcular glicose pura ideal no SG 15% (500 mL): 15 g * 5 = 75 g de glicose',
+      '2. Calcular glicose remanescente no SG 5% (500 mL): 5 g * 5 = 25 g de glicose',
+      '3. Definir déficit de massa: 75 g - 25 g = 50 g de glicose pura necessária para adição',
+      '4. Determinar concentração da ampola (Glicose 50% de 10 mL): 5g de glicose em cada ampola',
+      '5. Dividir déficit pela massa da ampola: 50 g / 5 g = 10 ampolas.'
+    ]
+  },
+  {
+    id: 'calc_med_16',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Difícil',
+    questionText: 'Foi prescrita Insulina Regular humana de 12 UI por via subcutânea. No almoxarifado há frascos contendo Insulina de 100 UI/mL, mas o setor possui apenas seringas descartáveis comuns graduadas de 3 mL (onde cada 1 mL corresponde a 100 subdivisões milimetradas). Quantos mL de insulina o técnico em enfermagem deve aspirar na seringas de 3 mL para cumprir a dose exata?',
+    type: 'calculation',
+    correctAnswer: '0.12',
+    explanation: 'Montamos a regra de três simples utilizando a escala de correspondência volumétrica de 1 mL para seringas descartáveis comuns sem escala dedicada de insulina (onde 100 UI estão contidas em 1 mL):\n100 UI -------- 1,0 mL\n12 UI -------- x mL\n100 * x = 12 * 1\n100x = 12\nx = 12 / 100 = 0,12 mL.\nO profissional deve aspirar exatamente 0,12 mL (o que equivale a 12 subdivisões finas da graduação da seringa comum).',
+    source: 'Cálculos com Insulina de Seringa Comum - Slide 34',
+    calculationSteps: [
+      '1. Fixar a formulação básica do frasco de insulina de mercado: 100 UI equivalem a 1 mL',
+      '2. Montar proporção linear com a seringa volumétrica: 100 UI -> 1 mL | 12 UI -> x mL',
+      '3. Multiplicação em cruz: 100 * x = 12',
+      '4. Divisão correspondente: x = 12 / 100 = 0,12 mL.'
+    ]
+  },
+  {
+    id: 'calc_med_17',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Médio',
+    questionText: 'Prescrição de infusão venosa de 500 mL de SF 0,9% para correr em 2 horas e 30 minutos por gravidade. Quantas gotas por minuto (macrogotas/min) o técnico em enfermagem deve programar no gotejador de rotina?',
+    type: 'calculation',
+    correctAnswer: '67',
+    explanation: '1. Converter o tempo de horas para minutos: 2 horas e 30 minutos = 150 minutos.\n2. Aplicar a fórmula de gotas em minutos (tempo < 3h ou frações em min): Gotas/min = (Volume em mL * 20) / Tempo em minutos.\n3. Substituindo: Gotas/min = (500 * 20) / 150 = 10000 / 150 = 66,66 ≈ 67 gotas/min (arredondamento usual).',
+    source: 'Cálculo de Gotejamento em Minutos - Slide 48',
+    calculationSteps: [
+      '1. Converter duração fracionada total para minutos: 2h30min = 150 minutos',
+      '2. Empregar fórmula de gotejo para escala em minutos: Gotas/min = (Volume * 20) / Tempo em minutos',
+      '3. Substituir valores: Gotas/min = (500 * 20) / 150 = 10000 / 150',
+      '4. Divisão matemática: 10000 / 150 = 66,66 gotas/min',
+      '5. Aplicar o arredondamento profissional para inteiro: 67 gotas/min.'
+    ]
+  },
+  {
+    id: 'calc_med_18',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Difícil',
+    questionText: 'Prescrição médica de Penicilina Cristalina de 1.000.000 UI por via intravenosa de 4/4h. No setor de enfermagem, está disponível para reconstituição frasco-ampola de 5.000.000 UI (composto de pó liofilizado que ocupa volume estático de 2 mL no frasco). Se o técnico em enfermagem reconstituir o frasco adicionando exatos 8 mL de diluente (Água Destilada estéril, totalizando 10 mL de volume final), quantos mL ele deve aspirar para obter a dose exata prescrita?',
+    type: 'calculation',
+    correctAnswer: '2',
+    explanation: 'A Penicilina Cristalina de 5.000.000 UI possui pó solúvel que ocupa espaço interno correspondendo a 2 mL. Se adicionamos 8 mL de solvente, o volume final líquido homogeneizado é de exatos 10 mL (conforme Slide 26).\nMontamos a proporção linear simples:\n5.000.000 UI -------- 10 mL\n1.000.000 UI -------- x mL\n5.000.000x = 10.000.000\nx = 10.000.000 / 5.000.000\nx = 2 mL.',
+    source: 'Penicilina Cristalina Reconstituição - Slide 26 e 31',
+    calculationSteps: [
+      '1. Identificar volume real homogeneizado: Cristais insolúveis liofilizados ocupam 2 mL. Adicionando 8 mL de água detilada, resulta em 10 mL de solução',
+      '2. Formular regra de três simples: 5.000.000 UI está contido em 10 mL, logo 1.000.000 UI está contido em x mL',
+      '3. Multiplicar em cruz: 5.000.000 * x = 10.000.000',
+      '4. Divisão final simplificada: x = 2 mL.'
+    ]
+  },
+  {
+    id: 'calc_med_19',
+    topic: 'Cálculo de Medicação',
+    difficulty: 'Difícil',
+    questionText: 'O médico prescreveu Heparina Sódica profilática de 2.000 UI por via subcutânea (SC) de 12/12h. O hospital dispõe apenas de ampolas de Heparina contendo concentração ultra-concentrada de 5.000 UI em apenas 0,25 mL (5.000 UI/0,25 mL) de volume. Quantos mL o técnico de enfermagem deve aspirar utilizando seringas milimetradas estéreis de 1 mL para cumprir a dose exata?',
+    type: 'calculation',
+    correctAnswer: '0.1',
+    explanation: 'Montamos a proporção linear simples cruzando a concentração real do frasco e o volume minguado da ampolagem:\n5.000 UI -------- 0,25 mL\n2.000 UI -------- x mL\n5.000x = 2.000 * 0,25\n5.000x = 500\nx = 500 / 5.000 = 0,1 mL.\nO profissional deve aspirar exatamente 0,1 mL (correspondendo a 10 divisões finas da seringa de 1 mL).',
+    source: 'Cálculos de Heparina Concentrada - Slide 35',
+    calculationSteps: [
+      '1. Coletar concentração do disponível: 5.000 UI contidas em 0,25 mL',
+      '2. Estruturar a regra de três simples: 5.000 UI está para 0,25 mL, assim como 2.000 UI está para x mL',
+      '3. Resolver multiplicação cruzada: 5.000 * x = 2.000 * 0,25 = 500',
+      '4. Dividir valores correspondentes: x = 500 / 5.000 = 0,1 mL.'
+    ]
+  },
+  {
+    id: 'vias_adm_10',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'O Artigo 44 da Resolução COFEN nº 564/2017 (Código de Ética de Enfermagem) versa sobre as prescrições médicas na rotina de enfermarias. Assinale qual conduta é permitida ao profissional de enfermagem segundo este fragmento regulamentar:',
+    type: 'multiple-choice',
+    options: [
+      'Sempre administrar medicamentos por teleprescrição telefônica informal sem registro oficial por conveniência.',
+      'Recusar-se, em conformidade ética, a administrar qualquer tipo de medicamento que venha desprovido de uma prescrição escrita legível assente em registro oficial, salvo em situações de extrema emergência clínica de acordo com os protocolos institucionais oficiais vigentes.',
+      'Realizar alterações de via e dosagem caso suspeite de ineficácia.',
+      'Permitir que auxiliares de enfermagem subscrevam autônoma receita medicamentosa de suporte.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'De acordo com o Art. 44 (Vias de Administração - Slide 3), é terminantemente vedada a injeção ou infusão de fármacos na ausência de prescrição médica manuscrita, assinada e carimbada de forma correta, estipulando-se proteção apenas para urgências graves sob abrigo de protocolos aprovados legalmente no serviço.',
+    source: 'Vias de Administração Parte 1 - Slide 3'
+  },
+  {
+    id: 'vias_adm_11',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'A via sublingual (VSL) de medicação (por exemplo, isordil ou toragesic) possui excelente velocidade de transposição e absorção tecidual periférica no leito de enfermaria. Assinale qual elemento anatômico e fisiológico assegura essa expressiva rapidez terapêutica:',
+    type: 'multiple-choice',
+    options: [
+      'A acidez gástrica sob o epitélio bucal que acelera a quebra de solutos.',
+      'A extensa vascularização capilar sanguínea profunda presente na mucosa sublingual somada à delicada espessura de revestimento deste tecido pélvico bucal, permitindo a absorção direta para a circulação sistêmica e anulando a inativação bioquímica do metabolismo hepático de primeira passagem.',
+      'A diluição salivar do fármaco pela amilase que decompõe proteínas no estômago.',
+      'A baixa absorção gástrica celular da mucosa bucal.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A mucosa sublingual (Slide 33) é profusamente irrigada por ramificações vasculares que absorvem com tremenda rapidez qualquer substância de peso molecular reduzido, inserindo-a diretamente no átrio circulatório venoso sem transitar pelo esôfago ou estômago, o que impede a inativação inicial pré-sistêmica promovida pelas enzimas do fígado.',
+    source: 'Vias de Administração Parte 1 - Slide 33'
+  },
+  {
+    id: 'vias_adm_12',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'A aplicação de injeções por Via Intramuscular profunda exige o domínio de técnicas para prevenir complicações. Com relação à técnica do trajeto em "Z" (Z-track), assinale qual a justificativa de sua indicação assistencial em enfermaria:',
+    type: 'multiple-choice',
+    options: [
+      'Evita dores cutâneas geradas pela punção perpendicular rápida.',
+      'Veda hermeticamente o canal de inserção linear da agulha através do deslocamento do tecido subcutâneo antes da aplicação. Isso barra o escape ou refluxo do fármaco para as camadas superficiais subcutâneas adiposas (evitando necrose local, cicatrizes hipertróficas ou nódulos inflamados de medicações irritantes como o ferro intramuscular).',
+      'Elimina todo e qualquer vestígio de dor dural.',
+      'Reduz a necessidade imediata de aspirar à beira do leito.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A técnica em "Z" consiste em afastar mecanicamente para o lado a pele e o tecido celular subcutâneo com a mão não-dominante antes de espetar perpendicularmente a haste metálica da agulha. Após a injeção e reposicionamento natural do tecido superficial, o cano linear de progressão é bloqueado por lacre físico (Vias de Administração - Sítios IM).',
+    source: 'Vias de Administração - Técnicas de Aplicação IM'
+  },
+  {
+    id: 'vias_adm_13',
+    topic: 'Vias de Administração',
+    difficulty: 'Médio',
+    questionText: 'Durante a administração vaginal de óvulos ou pomadas ginecológicas com bico aplicador plástico, qual cuidado de assepsia e técnica deve orientar o técnico de enfermagem?',
+    type: 'multiple-choice',
+    options: [
+      'Realizar aplicação sem necessidade de higiene íntima por ser mucosa protegida.',
+      'Promover higiene íntima prévia cuidadosa da região perineal, assegurar estrito respeito à privacidade do paciente utilizando biombos, posicionar o paciente em decúbito dorsal com pernas flexionadas (litotomia) e introduzir delicadamente o aplicador direcionando o curso para trás e para cima, seguindo a curvatura vaginal normal.',
+      'O aplicador plástico deve ser introduzido em ângulo perpendicular reto de 90° em direção ao reto.',
+      'Orientar o paciente a deitar-se de abdômen para baixo imediatamente após aplicação para reidratação.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A mucosa vaginal é de revestimento delicado. A assepsia prévia e posicionamento respeitoso em biombos e litotomia asseguram uma aplicação confortável pós-absorção. Direcionar o aplicador levemente para trás e para cima (Slide 41) respeita o canal vaginal posterior, evitando traumas pélvicos na uretra ou colo uterino.',
+    source: 'Vias de Administração Parte 1 - Slide 41'
+  },
+  {
+    id: 'elim_int_12',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Médio',
+    questionText: 'O enema de bário (enema opaco) corresponde a uma via laxativa hospitalar recomendada para pacientes com severa prisão de ventre, cujo objetivo principal é amolecer as fezes compactadas do cólon.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Falso',
+    explanation: 'O enema de bário ou opaco (Slide 41) não possui finalidade terapêutica reconstrutiva de amolecimento fecal ou tratamento laxativo de prisão de ventre. Consiste em procedimento diagnóstico radiológico onde soluções de contraste radiopaco salino de bário são administradas por via retal, visando mapear radiograficamente a conformidade morfológica e patologias do cólon.',
+    source: 'Lavagem Intestinal - Slide 41'
+  },
+  {
+    id: 'elim_int_13',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Médio',
+    questionText: 'Qual modalidade de enema retal é especificamente prescrita para revestir e amolecer o fecaloma (fezes desidratadas endurecidas) instalados em idosos e doentes acamados, facilitando sua expulsão confortável e protegendo as mucosas de traumas anal-fissurais?',
+    type: 'multiple-choice',
+    options: [
+      'Enema Medicamentoso Estéril de Neomicina.',
+      'Enema Carminativo contra flatos gástricos.',
+      'Enema Oleoso, que lubrifica o cólon e auxilia as fezes ressecadas a absorver o óleo, tornando-as macias e flexíveis.',
+      'Clister hipotônico de Fleet Enema com solução salina ácida.'
+    ],
+    correctAnswer: 'C',
+    explanation: 'O enema oleoso (Slide 41) lubrifica o curso do cólon. As fezes de compactação ressecadas absorvem e retêm os óleos minerais ou vegetais dispersos no lúmen, acarretando amolecimento sem induzir contrações espáticas mecânicas excessivas das alças intestinais.',
+    source: 'Lavagem Intestinal - Slide 41'
+  },
+  {
+    id: 'elim_int_14',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Médio',
+    questionText: 'A lavagem intestinal exige a progressão de uma sonda lubrificada pelo ânus. Para o sucesso no procedimento clínico de grandes enteroclismas clássicos em pacientes adultos, qual o comprimento seguro e padronizado de inserção da sonda retal?',
+    type: 'multiple-choice',
+    options: [
+      'De 1 a 2 cm de profundidade epidermal local.',
+      'De 25 a 30 cm de profundidade até o cólon descendente.',
+      'De 7 a 10 cm através do canal retal, permitindo a transposição livre da válvula anal.',
+      'A sonda deve ser introduzida em sua totalidade reta de 40 cm.'
+    ],
+    correctAnswer: 'C',
+    explanation: 'A progressão linear cuidadosa da sonda retal no adulto de enfermaria deve estender-se de 7 a 10 cm (Slide 45) para transpor com eficácia a curvatura anal e fixar o fluxo da solução de foma cômoda no interior do reto, minimizando o risco de perfurações intestinais severas por inserções excessivamente profundas.',
+    source: 'Lavagem Intestinal - Slide 45'
+  },
+  {
+    id: 'elim_int_15',
+    topic: 'Lavagem Intestinal',
+    difficulty: 'Médio',
+    questionText: 'Ao descrever o débito hídrico fecal de um paciente submetido a enema, o técnico reporta fezes esteatorreicas. Qual propriedade de coloração e aspecto define semiologicamente esse achado digestivo?',
+    type: 'multiple-choice',
+    options: [
+      'Fezes com traços de sangue vivo brilhante na periferia.',
+      'Presença anormal de gordura não absorvida, conferindo cor esbranquiçada/amarelada pálida, aspecto brilhante espumoso nas comadres e odor extremamente fétido e rançoso decorrente de má digestão de lipídeos.',
+      'Fezes em formato escibaloso esférico e pétreo cinzento.',
+      'Fezes escuras negras fétidas devido a hemorragia gástrica.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'Esteatorreia (Slide 39) decorre da deposição maciça de frações lipídicas intestinais não assimiladas no bolo fecal, manifestação típica de enfermidades absortivas biliares, duodenais ou colecistites, exalando odor repugnante típico de gordura oxidada rançosa.',
+    source: 'Lavagem Intestinal - Slide 39'
+  },
+  {
+    id: 'sond_ves_12',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Médio',
+    questionText: 'O cateterismo vesical (inserção de sondas urinárias de demora ou alívio pelo meato uretral estéril) é procedimento invasivo e causador potencial de sepse bacteriana retrógrada. Qual o papel regulamentar profissional de enfermagem assegurado pelo COFEN para tal ato?',
+    type: 'multiple-choice',
+    options: [
+      'O técnico tem autonomia livre e isolada para introduzir o cateter vesical em qualquer cirurgia.',
+      'A inserção física do cateter vesical estéril (alívio ou demora) é atividade invasiva e privativa do Enfermeiro (ou Médico), conquanto atue o técnico ativamente organizando a mesa, preenchendo bacias, assistindo e mantendo o coletor sob cuidados diários.',
+      'O técnico de enfermagem é proibido por completo de tocar no circuito de SVD devido a riscos bioéticos.',
+      'O técnico deve realizar exclusivamente a passagem em ambientes ambulatoriais não-estéreis.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A inserção da sonda na uretra demanda conhecimentos complexos e alto rigor de técnica asséptica para evitar traumas uretral-prostáticos e infecção do trato urinário associada ao cateterismo (ITU-ACV). Sendo assim, a inserção é restrita de direito ao Enfermeiro habilitado ou ao Médico (Slide 59 e Exercício 1).',
+    source: 'Sondagem Vesical - Slide 59 e Exercício 1'
+  },
+  {
+    id: 'sond_ves_13',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Médio',
+    questionText: 'No tocante às características diagnósticas da urina de pacientes sondados no leito de enfermaria, como é denominado o achado urinário com urina de aspecto leitoso, turvo e grumoso, acompanhado de odor fétido?',
+    type: 'multiple-choice',
+    options: [
+      'Hematúria crônica por microperfurações vasculares.',
+      'Glicosúria excessiva decorrente de jejuns prolongados.',
+      'Piúria (presença anormal de leucócitos/pus na urina), indicador clássico inflamatório-febril de infecção ativa.',
+      'Presença inócua de piridium anestésico biliar.'
+    ],
+    correctAnswer: 'C',
+    explanation: 'A piúria (Slide 72) é detectada visualmente pelo aspecto semelhante ao leite fluido ou turvação densa com sedimento esbranquiçado amarelado, composto de miríades de células imunes (leucócitos) de combate, caracterizando quadro infeccioso ativo do trato urológico.',
+    source: 'Sondagem Vesical - Termos Técnicos Slide 72'
+  },
+  {
+    id: 'sond_ves_14',
+    topic: 'Sondagem Vesical',
+    difficulty: 'Fácil',
+    questionText: 'Para insuflar o balonete de fixação interna da sonda vesical de demora (Foley), o técnico em enfermagem deve preferir exclusivamente solução salina (SF 0,9%) estéril.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Falso',
+    explanation: 'Insuflar balonete de demora com Soro Fisiológico (SF 0,9%) é terminantemente proibido. A água da solução salina evapora através do silicone/látex da sonda ao longo do tempo, restando cristais de sódio que se acumulam e entopem a fina válvula piloto pélvica lateral. Isso impede a desinsuflação posterior na retirada, exigindo punções dolorosas ou cirurgias uretrais graves de bexiga (Slide 64).',
+    source: 'Sondagem Vesical - Slide 64'
+  },
+  {
+    id: 'antrop_9',
+    topic: 'Medidas Antropométricas',
+    difficulty: 'Médio',
+    questionText: 'A mensuração confiável e fidedigna da estatura linear é vital para avaliar o IMC corporal e prescrever doses de quimioterapia. Em idosos ou acamados impossibilitados de ficar de pé, qual modelo estimativo matemático é usualmente empregado nas enfermarias brasileiras?',
+    type: 'multiple-choice',
+    options: [
+      'Estatura por anamnese verbal baseada no perímetro do pescoço.',
+      'Fórmulas matemáticas de Chumlea (que estimam indiretamente a estatura por meio do comprimento linear da Altura do Joelho e idade cronológica do paciente acamado).',
+      'Cálculo cartesiano de Chumlea somando peso e distância do trocanter.',
+      'Medição linear da derme utilizando fitas de assepsia vaginal.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A equação estimativa de Chumlea (Slide 12) avalia a proporcionalidade física a partir do fêmur/joelho e idade do doente pélvico, superando a barreira mecânica do doente cirúrgico paralisado no leito.',
+    source: 'Medidas Antropométricas - Slide 12'
+  },
+  {
+    id: 'antrop_10',
+    topic: 'Medidas Antropométricas',
+    difficulty: 'Médio',
+    questionText: 'A biossegurança é degrau vital durante a execução prática diária de pesagens e tomadas antropométricas no hospital. No tocante aos cuidados higiênicos, assinale qual dever profissional de enfermagem se impõe:',
+    type: 'multiple-choice',
+    options: [
+      'Utilizar luvas estéreis novas no manuseio de fitas descartáveis sem higienizar balanças.',
+      'Realizar a desinfecção mecânica minuciosa de fitas métricas, cubas da balança pediátrica ou a fita maleável com álcool 70% ou desinfetante oficial padronizado imediatamente antes e após pesagens individuais de cada paciente para barrar a transmissão cruzada de enterobactérias ou fungos dérmicos.',
+      'Evitar o contato com a superfície metálica estéril cobrindo-a com jornais do dia.',
+      'Higienizar materiais antropométricos apenas com solução salina gástrica morna.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'Instrumentos antropométricos constituem fômite de altíssima transmissão de infecções oportunistas hospitalares por contato repetido com dermes íntegras ou feridas (fita métrica, estadiômetros, balanças, Slide 7). Exige-se assepsia estrita.',
+    source: 'Medidas Antropométricas - Slide 7'
+  },
+  {
+    id: 'oxig_1',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'Qual o nome do procedimento assistencial de enfermagem focado na desobstrução física de secreções viscosas das vias aéreas buco-nasais com o emprego de cateter conectado a sistema de vácuo, visando restaurar livres trocas gasosas no doente?',
+    type: 'multiple-choice',
+    options: [
+      'Oxigenoterapia por cateter nasofaríngeo.',
+      'Aspiração de Secreções de Vias Aéreas (superiores e inferiores).',
+      'Lavagem pulmonar endotraqueal com lúmen duplo.',
+      'Umidificação por névoas quentes de Glicose.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A aspiração (Slide 15) remove secreções traqueobrônquicas e orofaríngeas que obstruem fisicamente os alvéolos e vias aéreas superiores, garantindo a permeabilidade e a restauração do padrão de saturação normal de oxigênio de repouso (Slide 15).',
+    source: 'Oxigenoterapia e Aspiração - Slide 15'
+  },
+  {
+    id: 'oxig_2',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'O cateter nasal tipo óculos (um elemento central de baixo fluxo de O2) possui regulamentação assistencial restrita para taxas volumétricas específicas de fluxo gasoso. Qual o limite de infusão clínica preconizado pelos guias de segurança para este dispositivo?',
+    type: 'multiple-choice',
+    options: [
+      'De 1 a 6 Litros por minuto (L/min), ofertando fração de FiO2 ajustada entre 21% e 44% de O2.',
+      'Duração livre contínua acima de 20 L/min com ar sob pressão alta.',
+      'Exclusivamente gotas de 0,5 mL de oxigênio destilado hora.',
+      'A infusão é de alto fluxo, variando de 10 a 15 L/min.'
+    ],
+    correctAnswer: 'A',
+    explanation: 'O cateter nasal tipo óculos (Slide 8 e 27) é ajustado para operar entre 1 L/min e 6 L/min. Taxas de vazão volumétrica superiores a 6 L/min não proporcionam aumento concomitante de FiO2 inspirada efetiva e geram dores lancinantes cefálicas por distensão do seio da face e sangramentos traumáticos da integridade nasal.',
+    source: 'Oxigenoterapia e Aspiração - Slides 8 e 27'
+  },
+  {
+    id: 'oxig_3',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'Dentre os dispositivos de alto fluxo está a consagrada Máscara de Venturi. Por qual motivo clínico estrutural ela representa o sistema mais seguro e indicado para suporte ventilatório de doentes acometidos por DPOC retentores de dióxido de carbono?',
+    type: 'multiple-choice',
+    options: [
+      'A máscara de Venturi possui amortecedor de tungstênio pélvico contra arritmias corporais.',
+      'Fornece oxigênio em frações inspiradas (FiO2) exatas, fixas, estáveis e conhecidas do paciente independente do padrão ou frequência de respiração do doente, ajustado pelo arraste de ar ambiente por bicos plásticos dosadores de cores correspondentes (orifícios físicos diversos de 24% a 50% de O2).',
+      'Fornece reinalação profunda de gases úmidos retidos estomacalmente.',
+      'Permite o fornecimento sob sistema fechado de 100% de ar puro sem arraste.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'O bico Venturi (Slide 20-21) titula a mistura por arraste aerodinâmico estático. Isso impede flutuações na FiO2 inspirada, o que é de crucial segurança aos retentores de gás carbônico (DPOC), os quais perderiam o drive reflexo respiratório hipóxico bulbar caso submetidos a frações de oxigênio excessivas pânicas.',
+    source: 'Oxigenoterapia e Aspiração - Slides 20 e 21'
+  },
+  {
+    id: 'oxig_4',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'O umidificador de oxigênio serve para evitar o ressecamento celular grave das mucosas nasofaríngeas. Qual solução deve ser sistematicamente adicionada ao reservatório do copo umidificador à beira do leito e qual a razão técnica urológica para tal restrição?',
+    type: 'multiple-choice',
+    options: [
+      'Soro Fisiológico (SF 0,9%), visando reidratar os brônquios com sais emolientes.',
+      'Água Destilada estéril livre, dado que soluções salinas (SF) se cristalizam rapidamente sob fluxo de ar, bloqueando de forma física os orifícios do borbulhador de gotejo, danificando os fluxômetros e expondo o pulmão a infecções graves bacterianas.',
+      'Soluções anti-sépticas glicerinadas estéreis de neomicina oral.',
+      'Não se utiliza líquido, umidificando-se apenas por infusão de soro na sonda.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A evaporação contínua do Soro Fisiológico (Slide 12) precipita cristais sólidos de sódio clorético nas hastes internas e nos poros do borbulhador, alterando a vazão, gerando caldos infecciosos bacteriológicos retrógrados pulmonares e inutilizando o circuito médico de oxigenação. Deve-se empregar unicamente Água Destilada estéril.',
+    source: 'Oxigenoterapia e Aspiração - Slide 12'
+  },
+  {
+    id: 'oxig_5',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'Consoante os pareceres do COFEN, a aspiração endotraqueal pânicas de vias aéreas em doentes intubados sob ventilação mecânica invasiva ou em traqueostomizados graves no leito de UTI é ato regulamentar de competência de quem?',
+    type: 'multiple-choice',
+    options: [
+      'O técnico de enfermagem tem autonomia privativa para executar o procedimento de alta complexidade em pacientes graves sem Enfermeiro.',
+      'É atividade privativa do Enfermeiro (ou do Médico) por consistir em manejo de alta complexidade técnica e iminência de intercorrências respiratórias agudas, cabendo contudo ao técnico aspirar doentes crônicos ou não graves estáveis.',
+      'Pode ser confiada a cuidadores ou auxiliares de forma geral sob supervisão telefônica.',
+      'Deve ser executado unicamente se o paciente apresentar diurese residual menor que 100 mL.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A Lei do Exercício da Enfermagem (Slide 15 e 36) e a Resolução COFEN 557/2017 fixam a aspiração de vias aéreas invasivas de doentes críticos pós-intubação ou TQT como privativo de Enfermeiro ou dependente de prescrição direta assistida, dado o potencial de lesão e instabilidade vagal-cardiogênica repentina nos doentes graves.',
+    source: 'Oxigenoterapia e Aspiração - Slides 15 e 36'
+  },
+  {
+    id: 'oxig_6',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'Durante a execução técnica de Aspiração buco-nasal, o técnico de enfermagem deve manter o circuito de sucção de vácuo ativado ininterruptamente desde a inserção nas narinas até a retirada final da sonda.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Falso',
+    explanation: 'A sonda flexível descartável estéril deve ser introduzida sem sucção (Slide 37) para evitar que o vácuo puxe e dilacere a mucosa ao longo da fossa de inserção. A pressão de vácuo deve ser liberada de forma intermitente (girando a sonda circularmente de forma suave, sem movimentos de vaivém bruscos) APENAS durante a tração voluntária lenta de recuo, durando no máximo de 2 a 5 segundos por entrada.',
+    source: 'Oxigenoterapia e Aspiração - Slides 15 e 37'
+  },
+  {
+    id: 'oxig_7',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'O tratamento assistencial por nebulizações e inalações clínicas utiliza vapores formados por fluxo gasoso pânicos. Quais finalidades terapêuticas básicas justificam esse recurso médico?',
+    type: 'multiple-choice',
+    options: [
+      'Provocar bloqueios pélvicos de secreções para descompressão estomacal.',
+      'Desobstruir o canal respiratório (com broncodilatadores), solubilizar e diluir o muco denso colado em brônquios (pelo soro), reidratar mucosas e vias respiratórias ressecadas e facilitar a expectoração natural sob repouso.',
+      'Medicação anti-séptica em regime de sistema aberto biliar.',
+      'Substituir a necessidade de oxigênio adicionados por cateter sob DPOC.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A névoa úmida (Slide 16) homogeneíza medicamentos diluidores brônquicos como Berotec ou Atrovent diretamente na superfície das membranas pulmonares, estimulando desobstrução rápida, amaciamento de escarros e repouso de padrão estritamente fisiológico confortável.',
+    source: 'Oxigenoterapia e Aspiração - Slide 16'
+  },
+  {
+    id: 'oxig_8',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'A pneumonia associada à assistência (infecção nosocomial de vias aéreas) é complicação severa. Para mitigá-la na rotina de enfermarias, quais tempos máximos de troca e assepsia clínica de umidificadores e copos nebulizadores devem conduzir o técnico?',
+    type: 'multiple-choice',
+    options: [
+      'Não há limite térmico ou higiênico, deitando-se apenas após turvação fétida.',
+      'Trocar e desinfectar sistemas umidificadores de O2 e cateter nasal a cada 24 horas consecutivas de uso, e higienizar ou substituir os copos de nebulização medicinal a cada 12 horas consecutivas.',
+      'Os reservatórios de água estéril de Venturi são substituídos apenas semanalmente.',
+      'Os equipos umidificadores são limpos exclusivamente pelos enfermeiros no fim do mês.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A contaminação retrógrada em reservatórios (Slide 33) é evitada realizando-se trocas rígidas. A fita de O2/umidificador a cada 24h e o nebulizador a cada 12h evitam a proliferação bacteriana que causaria infecções retrógradas.',
+    source: 'Oxigenoterapia e Aspiração - Recomendações Slide 33'
+  },
+  {
+    id: 'oxig_9',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'O excesso de O2 regulado por fluxos elevados sem suporte médico é reconhecido como deletério. Qual o mecanismo patológico adverso decorrente do estresse tóxico por hiperóxia prolongada no paciente retentor crônico de CO2?',
+    type: 'multiple-choice',
+    options: [
+      'Estimulação de cólicas intestinais seguidas de diarréia pélvica.',
+      'Depressão do centro respiratório bulbar (anulação do drive respiratório em decorrência da saturação súbita de O2), atelectasias por lesão de endotélio alveolar, tosse seca severa irritativa e desidratação profunda de mucosas.',
+      'Inversão do fluxo de diurese vesical com anúria.',
+      'Aceleração biliar com queimação mecânica profunda.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'Pacientes retentores crônicos dependem da baixa saturação púlmonar de O2 (leves incentivos hipóxicos no glomo carotídeo) para respirar. Oferecer frações exaradas de O2 (Slide 38) derruba reflexos, provocando parada respiratória com acidose e fibroses por estresse endotelial alveolar-capilar (atelectasias, lesão ciliar).',
+    source: 'Oxigenoterapia e Aspiração - Slide 38'
+  },
+  {
+    id: 'oxig_10',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'A oxigenoterapia em câmara hiperbárica submete o paciente a oxigênio puro sob pressões elevadas. Assinale qual patologia representa sua principal indicação assistencial e qual se constitui em contraindicação absoluta:',
+    type: 'multiple-choice',
+    options: [
+      'Indicada para tratamento de febre pediátrica; contraindicada em infecções urinárias.',
+      'Indicada para melhora de feridas isquêmicas de difícil cicatrização (pé diabético), osteomielite refratária e intoxicações graves por Monóxido de Carbono (CO); contraindicada de forma absoluta na presença de Pneumotórax não tratado.',
+      'Indicada exclusivamente para esvaziar fecalomas em apendicite ativa bacteriana.',
+      'Indicada para refluxo biliar gástrico; contraindicada em hipotensões pélvicas.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'A alta hiperoxigenação pânicas estimula neoangiogênese e cicatrização de escaras isquêmicas refratárias sãs (Slide 29). Constitui contraindicação absoluta soberana o Pneumotórax por risco de expansão rápida traumática de bolhas pulmonares hipertensivas.',
+    source: 'Oxigenoterapia e Aspiração - Slide 29'
+  },
+  {
+    id: 'oxig_11',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Fácil',
+    questionText: 'A máscara com reservatório (não reinalante) possui válvulas unidirecionais exclusivas de exalação que impedem que o ar expirado com gás carbônico retorne para a bolsa de recarga de oxigênio estéril.',
+    type: 'true-false',
+    options: [
+      'Verdadeiro',
+      'Falso'
+    ],
+    correctAnswer: 'Verdadeiro',
+    explanation: 'De acordo com o Slide 24 do material de Sistemas com Reservatório, a máscara não reinalante conta com pequenas tampas ou membranas circulares de válvula unidirecional que forçam os gases exalados do pulmão a sair pelas ranhuras ambientais, garantindo respiração pura de O2 do saco coletor auxiliar graduado.',
+    source: 'Sistemas com Reservatório - Slide 24'
+  },
+  {
+    id: 'oxig_12',
+    topic: 'Oxigenoterapia e Aspiração',
+    difficulty: 'Médio',
+    questionText: 'A regulação milimétrica do nível de vácuo no aspirador cirúrgico é vital antes de prosseguir com a aspiração clínica de vias aéreas por perigos de lesão. Qual escala de pressão de sucção deve pautar o profissional?',
+    type: 'multiple-choice',
+    options: [
+      'Pressão de vácuo livre superior a 250 mmHg.',
+      'Pressão de vácuo segura balizada entre 80 e 120 mmHg no instrumento.',
+      'Pressão estática de apenas 1 a 2 mmHg para acamados.',
+      'Não há limite regulado de vácuo para sonda gástrica ou purulenta.'
+    ],
+    correctAnswer: 'B',
+    explanation: 'Manter a força do vácuo no manômetro de vácuo restrito a 80-120 mmHg (Slide 36) assegura sucção com força ideal para carrear secreções espessas de orofaringe e traqueia, prevenindo estiramentos dolorosos, barotraumas ou lesões traumáticas dos tecidos laringe-epiglóticos.',
+    source: 'Oxigenoterapia e Aspiração - Recomendações de Pressão Slide 36'
+  },
+  ...SNG_SNE_EXTRA_QUESTIONS,
+  ...VIAS_LAVAGEM_EXTRA_QUESTIONS,
+  ...SOND_ANTROP_OXIG_EXTRA_QUESTIONS,
+  ...SNG_SNE_MORE_QUESTIONS,
+  ...CALC_MORE_QUESTIONS,
+  ...VIAS_MORE_QUESTIONS,
+  ...LAVAGEM_MORE_QUESTIONS,
+  ...SONDAGEM_MORE_QUESTIONS,
+  ...ANTROPOMETRIA_MORE_QUESTIONS,
+  ...OXIGENOTERAPIA_MORE_QUESTIONS,
+  ...CALC_MORE_EXTRA_QUESTIONS
 ];
+
+// Helper to shuffle multiple choice questions dynamically
+export const QUESTIONS_BANK: Question[] = RAW_QUESTIONS_BANK.map((q) => {
+  if (q.type === 'multiple-choice' && q.options && q.options.length > 0) {
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const correctIdx = letters.indexOf(q.correctAnswer.toUpperCase());
+    if (correctIdx !== -1 && correctIdx < q.options.length) {
+      const correctText = q.options[correctIdx];
+      
+      // Shuffle options (Fisher-Yates)
+      const shuffledOptions = [...q.options];
+      for (let i = shuffledOptions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+      }
+      
+      const newCorrectIdx = shuffledOptions.indexOf(correctText);
+      if (newCorrectIdx !== -1) {
+        return {
+          ...q,
+          options: shuffledOptions,
+          correctAnswer: letters[newCorrectIdx]
+        };
+      }
+    }
+  }
+  return q;
+});
+
+
+
 

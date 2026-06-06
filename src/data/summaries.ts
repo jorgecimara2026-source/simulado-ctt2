@@ -141,5 +141,101 @@ export const SUMMARIES_DATA: TopicSummary[] = [
         ]
       }
     ]
+  },
+  {
+    id: 'vias_administracao',
+    title: 'Vias de Administração de Medicamentos',
+    discipline: 'Sistematização do Cuidar em Enfermagem I',
+    professor: 'Profa. Dra. Malvina Rodrigues',
+    description: 'Bases legais e regulamentações éticas do COFEN 564/2017, o protocolo dos Treze Certos ginecológicos/parenterais, as vias enterais e sistêmicas.',
+    chapters: [
+      {
+        title: 'Bases Legais e Éticas (COFEN)',
+        content: [
+          'O Código de Ética (Resolução COFEN nº 564/2017) resguarda direitos e fixa sanções para a segurança medicamentosa.',
+          'Artigo 25: Garante o direito soberano de recusa do profissional diante de procedimentos inseguros ou para os quais não se sinta plenamente habilitado.',
+          'Artigo 44: Veda sumariamente o preparo e a infusão terapêutica de qualquer droga desprovida de prescrição formal manuscrita, assinada e com carimbo médico ativo, salvo em óbvios estados de urgência sob salvaguarda de protocolos.'
+        ],
+        tips: [
+          'Sempre confira os dados do carimbo e assinatura antes de iniciar infiltrações profundas!'
+        ]
+      },
+      {
+        title: 'Os Treze Certos e Prática de Vias',
+        content: [
+          'Protocolo dos Treze Certos: Prescrição correta, Paciente certo, Medicamento certo, Validade certa, Forma/Apresentação certa, Dose certa, Compatibilidade certa, Orientação certa, Via de administração certa, Horário certo, Tempo de infusão de equipo certo, Ação certa e Registro certo no prontuário.',
+          'Via Sublingual: Mucosa fina altamente provida de fluxo capilar que suprime o estômago e desvia da inativação hepática de primeira passagem, propiciando ação ultra rápida.',
+          'Via Vaginal e Retal: Técnicas requendo decúbito cômodo de Sims, garantia de estrito pudor e privacidade com biombos de enfermaria, lubrificação de sondas/supositórios e inserção orientada.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'oxigenoterapia_aspiracao',
+    title: 'Oxigenoterapia, Nebulização e Aspiração',
+    discipline: 'Assistência do Cuidar em Enfermagem',
+    professor: 'Dra. Malvina Rodrigues',
+    description: 'Mecanismos de oxigenação. Baixo fluxo (fita/cateter nasal, máscara simples) e alto fluxo (bicos coloridos de Venturi, reservatórios), processos de aspiração de vias aéreas e nebulização de apoio.',
+    chapters: [
+      {
+        title: 'Sistemas de Fluxo de Oxigênio',
+        content: [
+          'Cateter Nasal tipo Óculos: Dispositivo de baixo fluxo confortável tolerando taxas de fluxo de 1 a 6 L/min, promovendo FiO2 calibrada de 21% a 44%.',
+          'Máscara de Venturi: Sistema de alto fluxo que fornece FiO2 exata, estável e imune à frequência ventilatória, pautado pelo arraste físico gerado por adaptadores plásticos de calibres coloridos (24% a 50% de frações de oxigênio).',
+          'Segurança: Equipos e fluxômetros em oxigenoterapia requerem obrigatoriamente preenchimento com Água Destilada estéril no copo umidificador. O soro fisiológico cristaliza e inutiliza as agulhas do fluxômetro, gerando cross-contamination.'
+        ],
+        tips: [
+          'Umidificadores e cateteres requerem substituição diária a cada 24 horas!'
+        ]
+      },
+      {
+        title: 'Técnica de Aspiração de Secreções',
+        content: [
+          'Procedimento direcionado para drenar acúmulos mucosos obstrutivos na garganta ou canais de TOT/TQT de forma a liberar a respiração pulmonar.',
+          'Parecer COFEN 557/2017: A aspiração buco-nasal endotraqueal pânicas profunda em doentes críticos sob ventilação mecânica é ato de alta complexidade e privativo de Enfermeiro.',
+          'Técnica: A sonda macia descartável deve ser introduzida sem sucção sob clamp fechado. O vácuo regulador (seguro entre 80-120 mmHg) deve ser ativado apenas na fase de recuo lento em movimentos rotatórios suaves (não excedendo 2 a 5 segundos).'
+        ]
+      },
+      {
+        title: 'Nebulização e Suporte do O2',
+        content: [
+          'Nebulização: Processo gerando microgículas aerosol para carrear broncodilatadores (como Berotec ou Atrovent) diretamente aos tecidos respiratórios afetados por asma ou DPOC.',
+          'Toxicidade de Oxigênio: A hiperóxia acarreta efeitos colaterais adversos severos, deprimindo a fita de refluxo de hipóxia de retentores de gás carbônico (DPOC), ressecando mucosas nasais e induzindo atelectasias por estresse capilar alveolar.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'medidas_antropometricas',
+    title: 'Medidas Antropométricas no Leito',
+    discipline: 'Assistência do Cuidar em Enfermagem',
+    professor: 'Profa. Dra. Malvina Rodrigues',
+    description: 'Aferição de peso, altura, circunferências coronárias nos adultos saudáveis, estimativas de Chumlea para doentes acamados e assepsia biossegura de equipamentos.',
+    chapters: [
+      {
+        title: 'Equipamentos e IMC Clínico',
+        content: [
+          'Balanças mecânicas/digitais e estadiômetros (alinhando pupila no plano de Frankfurt) compõem as bases de tomada antropométrica de estatura e massa.',
+          'IMC (Fórmula de Quetelet): Peso (kg) / Altura² (m²). Eutrofia (faixa de normalidade de repouso) estende-se nos índices de 18,5 a 24,9 kg/m².'
+        ]
+      },
+      {
+        title: 'Fórmulas de Chumlea e Perímetros',
+        content: [
+          'Chumlea: Em pacientes cirúrgicos, sob rebaixamento dural ou paralisados acamados, utilizam-se equações científicas que estimam fidedignamente o peso e altura através de medidas segmentares do corpo (comprimento da Altura do Joelho AJ e faixa etária).',
+          'Circunferência de Cintura (CC): Marcador fundamental da OMS de gordura intra-abdominal e risco de acidentes cardiovasculares coronários agudos. Intervalos limitantes de atenção: CC >= 94 cm nos homens e CC >= 80 cm nas mulheres.'
+        ],
+        tips: [
+          'A fita métrica deve ser posicionada no ponto horizontal médio entre a última costela flutuante e a crista ilíaca anterior!'
+        ]
+      },
+      {
+        title: 'Biossegurança Assistencial',
+        content: [
+          'Materiais antropométricos de repetição (como fitas maleáveis e cursor de estadiômetro) são fômites de infecção cruzada de pele.',
+          'Higienizar com álcool 70% ou produto desinfectante regulamentar as superfícies de contato de balanças e fitas antes e após cada uso.'
+        ]
+      }
+    ]
   }
 ];
